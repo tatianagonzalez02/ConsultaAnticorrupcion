@@ -1,0 +1,29 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div style="text-align:center">
+   <img width=100% alt="banner" src="assets/img/banner.jpg">
+</div>
+<div class="container">
+<div class="row">
+  <div class="col-sm">
+    <h3 style="text-align: left"><app-variables></app-variables></h3>
+  </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+       <select (change)="onChange($event.target.value)">
+       <option value="-1" selected>TODOS</option>
+       <option [value]="i" *ngFor="let m of _ds.consultas; let i=index" > {{m.municipio}} </option>
+    </select>
+
+  </div>
+
+
+</div>
+<div *ngIf="selected"> <app-http [indexSelected]="selected"></app-http></div>
+
+
+</div>
+<div id="space"></div>
+<div id="final"></div>
